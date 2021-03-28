@@ -1,18 +1,33 @@
-<table class="table table.striped">
-  <thead>
-    <tr>
-      <th>userId</th>
-      <th>id</th>
-      <th>title</th>
-      <th>body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of PostList">
-      <td>{{ item.userId }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.title }}</td>
-      <td>{{ item.body }}</td>
-    </tr>
-  </tbody>
-</table>
+<nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-primary" type="button"
+      (click)="onLoadData()" >Load data</button>
+  </form>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table *ngIf="isDataLoaded" class="table table-striped">
+        <thead>
+          <tr>
+            <th>userId</th>
+            <th>id</th>
+            <th>title</th>
+            <th>body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of PostList">
+            <td>{{ item.userId }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.body }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

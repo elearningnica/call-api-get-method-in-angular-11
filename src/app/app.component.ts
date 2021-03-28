@@ -8,6 +8,7 @@ import { SharedService } from './shared.service';
 })
 export class AppComponent {
   title = 'call-api-get-method-in-angular';
+  isDataLoaded = false;
 
     constructor(private service:SharedService) {
 
@@ -16,11 +17,16 @@ export class AppComponent {
     PostList:any=[];
 
     ngOnInit(): void {
-      this.getList();
+      // this.getList();
     }
 
     getList() {
       this.service.getPostList().subscribe(data=> { this.PostList = data; });
+    }
+
+    onLoadData() {
+      this.getList();
+      this.isDataLoaded = true;
     }
 
 }
