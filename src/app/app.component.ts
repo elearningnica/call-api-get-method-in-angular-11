@@ -24,6 +24,7 @@ export class AppComponent {
       this.service.getPostList().subscribe(data=> { this.PostList = data; });
     }
 
+    //ClickButton
     onLoadData() {
       this.getList();
       this.isDataLoaded = true;
