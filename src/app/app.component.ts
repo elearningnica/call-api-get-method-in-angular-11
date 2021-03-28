@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'call-api-get-method-in-angular';
+
+    constructor(private service:SharedService) {
+
+    }
+
+    PostList:any=[];
+
+    ngOnInit(): void {
+      this.getList();
+    }
+
+    getList() {
+      this.service.getPostList().subscribe(data=> { this.PostList = data; });
+    }
+
 }
