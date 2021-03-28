@@ -6,6 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 https://youtu.be/5xisN5Vv-Rg
 
+If you get this error: An unhandled exception occurred: Cannot find module '@angular-devkit/build-angular/package.json'
+Please run the follwing command: npm install --save-dev @angular-devkit/build-angular
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
